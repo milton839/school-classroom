@@ -6,7 +6,7 @@ const Students = () => {
   const [students, setStudents] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    fetch("/public/data.JSON")
+    fetch("./public/data.JSON")
       .then((res) => res.json())
       .then((data) => setStudents(data));
   }, []);
@@ -18,6 +18,7 @@ const Students = () => {
   const class5 = students.filter((t) => t.class == 5);
   return (
     <div>
+        <div>Search Data</div>
       <StudentsTable cls={class1} classNumber={1} />
       <StudentsTable cls={class2} classNumber={2} />
       <StudentsTable cls={class3} classNumber={3} />
